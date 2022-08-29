@@ -1,4 +1,4 @@
-//Data 
+//Data - Global Scope
 const inventory = [
         {
             id:1,
@@ -68,3 +68,76 @@ const inventory = [
 
         }
     ]
+
+
+
+// Function that returns the first review for any given
+// book object
+// Function Declaration
+
+// Higher Order Function => Accepts callback function(s) and
+// utilizes / invokes them in some manner
+// const higherOrder = cb => cb();
+
+// const callbackFunction = () => "Hello!";
+
+// Callback FUnction => Passed into Higher Order Function(s)
+// and utilized / invoked from within
+// () => console.log("Hello!");
+
+// Handling DOM Events
+// User clicks on button on page (Inside DOM)
+// What Function DO We Want To Fire Off When Clicked?
+
+// index => parameter
+// parameters go with declarations
+// function pullFirstReview(index){
+//     return inventory[index].reviews[0];
+// }
+
+// 0 => argument
+// arguments go with invocaions
+// console.log(pullFirstReview(0))
+
+// // Arrow syntax/function
+// const pullFirstReview = () =>{
+//     return inventory[0].reviews[0]
+// }; 
+
+//Function Invocation
+// console.log(pullFirstReview());
+
+// Array => Ordered, indexed lists of elements
+
+// Interpolation
+// console.log(inventory[0].price);
+// console.log(`$${inventory[6].price.toFixed(2)}`);
+
+// function priceFormatter(index){
+//     return `$${inventory[index].price.toFixed(2)}`;    
+// };
+
+// console.log(priceFormatter(2));
+
+
+// Global Scope - available anywhere
+const myName = "Louis";
+
+// Access Var in Global Scope from WIthin Function Scope
+const sayMyName = () => console.log(myName);
+
+// Pull Price from Each Book
+const pullAllPrice = inventory => {
+    // console.log(myName);
+    
+    // Function Scope
+    const myName = "Louis";
+
+    for (let item of inventory){
+        // Block Scope
+        const myPrice = item.price;
+    }
+} 
+
+pullAllPrice(inventory);
+
